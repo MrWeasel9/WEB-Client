@@ -74,7 +74,3 @@ Send a POST request to perform the logout operation.
 ### Reconnecting
 
 Reopen the connection for each command using the `open_connection` command.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
