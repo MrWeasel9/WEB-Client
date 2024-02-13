@@ -1,0 +1,38 @@
+Pentru aceasta tema am folosit skeletul de la laboatorul 9 
+si biblioteca parson pentru manipularea datelor JSON
+Am ales biblioteca parson pentru a analiza si genera
+structuri JSON in C. Am folosit-o pentru analizarea 
+unui sir de caractere JSON si transformarea acestuia 
+intr-o structura interna de obiecte JSON pe care
+le trimit in format JSON catre server
+Am folosit parson si pentru a accesa valori specifice 
+din mesajele primite de la server
+
+Am facut 2 constante pentru IP si PORT si
+am definit rutele de acces pentru API-ul REST in
+REGISTER, LOGIN, LOGOUT, ENTER si BOOKS
+
+Am creat o functie ajutatoare care verifica daca un
+șir de caractere reprezintă un număr întreg valid
+O folosesc pentru a verifica daca ID-urile introduse
+de user sunt numere sau numere
+
+Am variabilele message si response pentru ce trimit/primesc
+de la server. In cookies si token tin cookiurile de autentificare
+si tokenul JWT. Am un semafor connected care indica daca userul
+este logat sau nu. In sockfd tin socketul pentru conexiunea cu serverul
+
+Pentru register si login construiesc cereri de tip POST pentru a trimite
+informatiile de inregistrare/autentificare la server.
+Pentru login salvez cookieul in arrayul cookies si schimb semaforul connected
+Pentru enter_library verific daca userul este autentificat. Daca este,
+construiesc o cerere de tip GET si extrag token-ul JWT primit de la server
+Pentru get_books si get_book verific daca user-ul este logat si daca a primit
+acces la biblioteca. Daca totul este in regul construiesc o cerere de tip GET
+pentru a obtine cartile
+Pentru add_book iau titlul, autorul, genul, editura si nr de pagini al cartii
+si construiesc o cerere de tip POST pentru a adauga cartea
+Pentru delete_book iau ID-ul cartii care trebuie stearsa si construiesc o
+cerere de tip DELETE pentru a sterge cartea
+Pentru logout trimit o cerere de tip POST pentru a efectua deconectarea
+Pentru fiecare comanda redeschid conexiunea folosind comanda open_connection
