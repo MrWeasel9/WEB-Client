@@ -1,5 +1,3 @@
-Sure, here's the README formatted in Markdown for GitHub:
-
 # Library Management System
 
 This project is a library management system implemented in C, utilizing the Parson library for JSON data manipulation. Parson library was chosen for its capabilities in parsing and generating JSON structures within the C programming language. It is used to analyze a JSON string and transform it into an internal structure of JSON objects, which are then sent to the server in JSON format.
@@ -76,7 +74,3 @@ Send a POST request to perform the logout operation.
 ### Reconnecting
 
 Reopen the connection for each command using the `open_connection` command.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
